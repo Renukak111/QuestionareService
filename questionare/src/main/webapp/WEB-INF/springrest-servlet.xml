@@ -15,14 +15,7 @@
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.rest.services" />
 	
-	<!-- <util:properties id = "queries" location = "classpath:queries.xml"></util:properties> --> 
-
-	<!-- <jdbc:initialize-database data-source="dataSource"
-		enabled="true">
-		<jdbc:script location="classpath:db-schema.sql" />
-		<jdbc:script location="classpath:db-test-data.sql" />
-	</jdbc:initialize-database> -->
-	
+	<util:properties id = "queries" location = "classpath:queries.xml"></util:properties> 
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -31,15 +24,5 @@
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
-
-	<!-- <bean id="namedParamJdbcTemplate"
-		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-		<constructor-arg index="0" ref="dataSource"></constructor-arg>
-	</bean>
-
-	<bean id="springNamedParamJtExample"
-		class="com.javarticles.jdbc.jdbctemplate.SpringNamedParamMapJdbcTemplateQueryExample"
-		autowire="byType">
-	</bean> -->
 
 </beans> 

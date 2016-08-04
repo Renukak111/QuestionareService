@@ -22,17 +22,15 @@ public class UserDetailDAOImpl extends BaseDao implements UserDetailsDAO {
 	@Autowired
 	public UserDetailDAOImpl(DataSource dataSource) {
 		super(dataSource);
-		// TODO Auto-generated constructor stub
 	}
 
-	/*@Autowired
-	protected Properties queries;*/
+	@Autowired
+	protected Properties queries;
 	
 	public String getUserName(String user) {
-		// TODO Auto-generated method stub
 		
-		//String query = queries.getProperty("getUser");
-		String query = "select * from user_access where user_name = :username ;";
+		String query = queries.getProperty("getUser");
+		//String query = "select * from user_access where user_name = :username ;";
 		
 		MapSqlParameterSource map= new MapSqlParameterSource();
 		map.addValue("username", user);
